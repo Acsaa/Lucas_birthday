@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Aniversário, Lucas!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f8ff;
+            margin: 0;
+        }
+        h1 {
+            color: #333;
+        }
+        .balloons {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .balloon {
+            width: 100px;
+            height: 150px;
+            background-color: #b30a0a;
+            border-radius: 50% 50% 40% 40%;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .balloon:hover {
+            transform: scale(1.1);
+        }
+        .balloon:after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 45%;
+            width: 10px;
+            height: 30px;
+            background-color: #b30a0a;
+        }
+        #message {
+            font-size: 1.5em;
+            color: #333;
+            margin-top: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Estoure o que era pra ser alguns balões para descobrir a mensagem, torcedor do impopular Corinthians!</h1>
+    <div class="balloons">
+        <div class="balloon" onclick="popBalloon(1)"></div>
+        <div class="balloon" onclick="popBalloon(2)"></div>
+        <div class="balloon" onclick="popBalloon(3)"></div>
+    </div>
+
+    <div id="message"></div>
+
+    <script>
+        let balloonsPopped = 0;
+
+        function popBalloon(balloonNumber) {
+            const balloon = document.querySelectorAll('.balloon')[balloonNumber - 1];
+            balloon.style.visibility = 'hidden'; 
+            balloonsPopped++;
+
+            if (balloonsPopped === 3) {
+                document.getElementById('message').textContent = 
+                'Lucas!! Feliz aniversário! Que saudade de você! Espero que o seu dia seja incrível e cheio de momentos que te façam sorrir. Você é um cara sensacional, e tenho certeza de que vai mandar muito bem em tudo que fizer, tanto academicamente quanto na vida. Aproveita cada segundo, porque você merece demais! A gente precisa se encontrar logo. Tô com muita saudade! 🎉🥳';
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
